@@ -12,7 +12,7 @@
 </head>
 <body>
 <c:import url="cabecalho.jsp" />
-	<h1>Adiciona Contatos</h1>
+	<!-- <h1>Adiciona Contatos</h1> -->
 	<hr />
 	<form action="adicionaContato" method="post">
 		Nome: <input type="text" name="nome" /><br />
