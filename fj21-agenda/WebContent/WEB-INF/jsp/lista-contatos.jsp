@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 <body>
 	<c:import url="cabecalho.jsp"></c:import>
 	<!-- cria o DAO -->
-	<!--<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"></jsp:useBean>-->
+	<%--<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"></jsp:useBean>--%>
 	<!-- a linha acima foi removida devido à utilização da arquitetura MVC -->
 
 	<table border="1">
@@ -21,13 +21,13 @@
 			<td>E-mail</td>
 			<td>Endereço</td>
 			<td>Data de Nascimento</td>
-			<td/>
+			<td />
 		</tr>
 		<!--  percorre contatos montando as linhas da tabela -->
-		<!--<c:forEach var="contato" items="${dao.lista}" varStatus="id">-->
+		<%--<c:forEach var="contato" items="${dao.lista}" varStatus="id">--%>
 		<!-- a linha acima foi substituída devido à utilização da arquitetura MVC -->
 		<c:forEach var="contato" items="${contatos}">
-		<tr bgcolor="#${id.count % 2 == 0 ? 'E9967A' : 'FDF5E6'}">
+			<tr bgcolor="#${id.count % 2 == 0 ? 'E9967A' : 'FDF5E6'}">
 				<td>${id.count}</td>
 				<td>${contato.nome}</td>
 				<td><c:choose>
@@ -37,16 +37,12 @@
 						<c:otherwise>E-mail não informado</c:otherwise>
 					</c:choose></td>
 				<td>${contato.endereco}</td>
-				<td>
-				<fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" />
-				</td>
-				<td>
-					<a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
+				<td><fmt:formatDate value="${contato.dataNascimento.time}"
+						pattern="dd/MM/yyyy" /></td>
+				<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
 				</td>
 			</tr>
 		</c:forEach>
-		
-			
 	</table>
 	<c:import url="rodape.jsp"></c:import>
 </body>

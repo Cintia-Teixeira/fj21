@@ -10,11 +10,12 @@ import br.com.caelum.agenda.modelo.Contato;
 
 public class ListaContatosLogic implements Logica {
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
+	
 		List<Contato> contatos = new ContatoDao().getLista();
 		
 		req.setAttribute("contatos", contatos);
 		
-		return "lista-contatos.jsp";
+		return "/WEB-INF/jsp/lista-contatos.jsp";
 	}
 
 }
