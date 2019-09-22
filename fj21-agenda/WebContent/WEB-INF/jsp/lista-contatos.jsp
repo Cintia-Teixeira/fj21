@@ -9,7 +9,6 @@
 <title>Projeto fj21-agenda</title>
 </head>
 <body>
-	<c:import url="cabecalho.jsp"></c:import>
 	<!-- cria o DAO -->
 	<%--<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"></jsp:useBean>--%>
 	<!-- a linha acima foi removida devido à utilização da arquitetura MVC -->
@@ -21,6 +20,7 @@
 			<td>E-mail</td>
 			<td>Endereço</td>
 			<td>Data de Nascimento</td>
+			<td />
 			<td />
 		</tr>
 		<!--  percorre contatos montando as linhas da tabela -->
@@ -41,9 +41,10 @@
 						pattern="dd/MM/yyyy" /></td>
 				<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
 				</td>
+				<td><a href="mvc?logica=AlteraContatoLogic&id=${contato.id}">Alterar</a>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
-	<c:import url="rodape.jsp"></c:import>
 </body>
 </html>

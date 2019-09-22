@@ -1,10 +1,12 @@
 <%@ tag language="java" pageEncoding="ISO-8859-1"%>
+
 <%@ attribute name="id" required="true" %>
+<%@ attribute name="value" required="false" %>
 
 <input type="text" id="${id}" name="${id}" />
 <script>
 	$("#${id}").datepicker({dateFormat: 'dd/mm/yy'});
-	<!--posso percorrer os meses do ano e mudar de ano-->
+	<!--posso percorrer os meses do ano e mudar de ano -->
 	$("#${id}").datepicker({changeYear: true});
 	
 	<!--Selecionando o ano por meio de um dropdown-->
