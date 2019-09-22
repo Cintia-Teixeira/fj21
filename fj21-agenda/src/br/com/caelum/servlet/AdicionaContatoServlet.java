@@ -62,7 +62,7 @@ public class AdicionaContatoServlet extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");*/
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/contato-adicionado.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/contato-adicionado.jsp");
 		rd.forward(request, response);
 	}
 

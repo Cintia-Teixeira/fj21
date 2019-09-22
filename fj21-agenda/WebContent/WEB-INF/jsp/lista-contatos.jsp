@@ -28,7 +28,7 @@
 		<!-- a linha acima foi substituída devido à utilização da arquitetura MVC -->
 		<c:forEach var="contato" items="${contatos}">
 			<tr bgcolor="#${id.count % 2 == 0 ? 'E9967A' : 'FDF5E6'}">
-				<td>${id.count}</td>
+				<td>${contato.id}</td>
 				<td>${contato.nome}</td>
 				<td><c:choose>
 						<c:when test="${not empty contato.email}">
@@ -46,5 +46,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<br>
+	<a href="mvc?logica=AdicionaContatoLogic">Adicionar Contato</a>
 </body>
 </html>

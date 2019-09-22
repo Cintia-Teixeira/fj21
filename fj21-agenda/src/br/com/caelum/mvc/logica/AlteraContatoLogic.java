@@ -7,7 +7,7 @@ public class AlteraContatoLogic implements Logica {
 	
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		return "altera-contato.jsp";
+		return "/WEB-INF/jsp/altera-contato.jsp";
 	}
 
 }

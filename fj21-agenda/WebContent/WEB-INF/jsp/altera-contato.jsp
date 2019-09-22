@@ -14,10 +14,10 @@
 <script src="js/jquery-ui.js"></script>
 </head>
 <body>
-<c:import url="cabecalho.jsp" />
+<c:import url="/WEB-INF/jsp/cabecalho.jsp" />
 	<!-- <h1>Altera Contato</h1> -->
 	<hr />
-	<form action="adicionaContato" method="post">
+	<form action="mvc?logica=AtualizaContatoLogic" method="post">
 		<input type="hidden" name="id" value="${param.id}">
 		<label>Nome:</label> <input type="text" name="nome" value="${param.nome}"><br>
 		<label>E-mail:</label> <input type="text" name="email" value="${param.email}"><br>
@@ -28,6 +28,6 @@
 		
 		<input type="submit" value="Alterar" />
 	</form>
-<c:import url="rodape.jsp" />
+<c:import url="/WEB-INF/jsp/rodape.jsp" />
 </body>
 </html>
